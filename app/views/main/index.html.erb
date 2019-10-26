@@ -1,0 +1,34 @@
+    <div class="row headline"><!-- Begin Headline -->
+    
+        <!-- Slider Carousel
+        ================================================== -->
+        <div class="span8">
+            <div class="flexslider">
+              <ul class="slides">
+                <% Gallery.where(slider: true).each_with_index do |slide,index| %>
+                <li><a href="gallery-single.htm"><%= image_tag slide.image.url %></a></li>
+                <% end %>
+                <!-- <li><a href="gallery-single.htm"><img src="img/gallery/slider-img-1.jpg" alt="slider" /></a></li> -->
+              </ul>
+            </div>
+        </div>
+        
+        <!-- Headline Text
+        ================================================== -->
+        <div class="span4">
+            <h3>ООО ИЦ "Лифт-Эксперт"</h3>
+            <p class="lead"></p>
+            <p>Общество с ограниченной ответственностью Инженерный центр "Лифт-Эксперт" созданное в 2005 г. стало первой организацией в г.Липецке занимающейся экспертизой промышленной безопасности лифтового оборудования.</p>
+
+        </div>
+    </div><!-- End Headline -->
+    
+    <div class="row">
+        <div class="span12">
+            <h3 class="title-bg">ООО ИЦ "Лифт-Эксперт"
+                <small>Общество с ограниченной ответственностью Инженерный центр "Лифт-Эксперт"</small>
+            </h3>
+            <%= @page_index.description.html_safe %>
+        </div>
+    </div><!-- End Gallery Row -->
+    

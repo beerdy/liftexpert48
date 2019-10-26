@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liftexpert48</title>
+    <%= csrf_meta_tags %>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <%= favicon_link_tag 'img/favicon.ico', rel: 'shortcut icon' %>
+    <%= favicon_link_tag 'img/apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
+    <%= favicon_link_tag 'img/apple-touch-icon-72x72.png', rel: 'apple-touch-icon', type: 'image/png', sizes: "72x72"  %>
+    <%= favicon_link_tag 'img/apple-touch-icon-114x114.png', rel: 'apple-touch-icon', type: 'image/png', sizes: "114x114"  %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="color-bar-1"></div>
+    <div class="color-bar-2 color-bg"></div>
+    
+    <div class='<%= @page_index ? "container" : "container main-container" %>'>
+    
+      <div class="row header"><!-- Begin Header -->
+      
+        <!-- Logo
+        ================================================== -->
+        <div class="span5 logo">
+          <a href="index.htm"><img src="img/piccolo-logo.png" alt="" /></a>
+            <h1>ЛИФТЭКСПЕРТ</h1>
+        </div>
+        
+        <%= render 'main/hmenu' %>
+        
+      </div><!-- End Header -->
+     
+
+      <%= yield %>
+    
+    </div> <!-- End Container -->
+
+    <!-- Footer Area
+        ================================================== -->
+
+  <div class="footer-container">
+      <div class="container">
+          <div class="row footer-row">
+          </div>
+
+            <div class="row">
+                <div class="span12 footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6">
+                          <span class="left">        
+                            <p>© ООО ИЦ «ЛИФТЭКСПЕРТ» - Права защищены законом РФ. <br><i class="fa fa-heart"></i> <a href="https://otklik.pw/" target="_blank">ОткликПавэр</a></p>
+                          </span>
+                        </div>
+                        <div class="">
+                            <span class="right footer-menu">
+                            <% @pages.each_with_index do |page,index| %>
+                              <%= index==0 ? '' : '|&nbsp;&nbsp;&nbsp;'.html_safe %>
+                              <%= link_to page.title.slice(0,1).capitalize+page.title.downcase.slice(1..-1), ((page.link.nil?||page.link=='') ? page : "/#{page.link}" ) %>&nbsp;&nbsp;&nbsp;
+                            <% end %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scroll to Top -->  
+    <div id="toTop" class="hidden-phone hidden-tablet">На верх</div>
+  </body>
+</html>

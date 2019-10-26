@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row gallery-row"><!-- Begin Gallery Row --> 
+  
+    <div class="span12">
+        <h3 class="title-bg">ООО ИЦ "Лифт-Эксперт"
+          <small><%=@page.title%></small>
+        </h3>
+
+        <%= @page.description.try(:html_safe) %>
+
+    </div>
+
+</div><!-- End Gallery Row -->
