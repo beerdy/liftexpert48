@@ -14,7 +14,9 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require jquery.flexslider
 //= reuqire ckeditor/config
 //= require font_awesome5
 //= require main
+
 //= require_tree .
