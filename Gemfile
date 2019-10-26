@@ -41,6 +41,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'font_awesome5_rails'
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
+gem 'yaml_db'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
