@@ -4,5 +4,9 @@ class ApplicationController < ActionController::Base
   
   def init
     @pages = Page.all
+
+    @pages.each do |content|      
+      @contacts = content if content.link == 'contacts'
+    end
   end
 end
